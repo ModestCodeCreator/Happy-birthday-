@@ -9,10 +9,12 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #ff5858 100%);
-            background-size: 400% 400%;
+            background: linear-gradient(45deg, 
+                #ff0066, #ff6600, #ffcc00, 
+                #33cc33, #0099ff, #6633ff, 
+                #ff0066, #ff6600, #ffcc00);
+            background-size: 1000% 1000%;
             min-height: 100vh;
-            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -20,13 +22,36 @@
             padding: 20px;
             overflow: hidden;
             position: relative;
-            animation: gradientBG 15s ease infinite;
+            animation: gradientBG 8s ease infinite;
         }
         
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+        
+        /* Эффект мерцания звезд */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
         
         .card {
@@ -37,12 +62,39 @@
             width: 90%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 0 50px rgba(255, 255, 255, 0.1) inset;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             animation: float 8s ease-in-out infinite;
             position: relative;
             z-index: 1;
             transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                #ff0066, #ff6600, #ffcc00, 
+                #33cc33, #0099ff, #6633ff);
+            background-size: 400% 400%;
+            border-radius: 27px;
+            z-index: -1;
+            animation: borderGlow 4s ease infinite;
+            filter: blur(10px);
+            opacity: 0.7;
+        }
+        
+        @keyframes borderGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         .surprise-open .card {
@@ -59,8 +111,11 @@
         }
         
         h1 {
-            background: linear-gradient(90deg, #ff6b6b, #ffa726, #ff6b6b);
-            background-size: 200% 200%;
+            background: linear-gradient(90deg, 
+                #ff0066, #ff6600, #ffcc00, 
+                #33cc33, #0099ff, #6633ff, 
+                #ff0066);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -68,13 +123,13 @@
             margin-bottom: 10px;
             font-weight: 900;
             line-height: 1.2;
-            animation: gradientText 3s ease infinite;
+            animation: gradientText 4s ease infinite;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         
         @keyframes gradientText {
-            0% { background-position: 0% 50%; }
+            0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
         
         .name {
@@ -83,20 +138,43 @@
             margin: 15px 0;
             letter-spacing: 1.5px;
             color: white;
-            text-shadow: 0 0 30px rgba(255, 107, 107, 0.7);
-            animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 
+                0 0 20px rgba(255, 0, 102, 0.7),
+                0 0 40px rgba(255, 0, 102, 0.5),
+                0 0 60px rgba(255, 0, 102, 0.3);
+            animation: nameGlow 2s ease-in-out infinite alternate;
         }
         
-        @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(255, 107, 107, 0.7); }
-            to { text-shadow: 0 0 30px rgba(255, 107, 107, 0.9), 0 0 40px rgba(255, 107, 107, 0.6); }
+        @keyframes nameGlow {
+            from { 
+                text-shadow: 
+                    0 0 20px rgba(255, 0, 102, 0.7),
+                    0 0 40px rgba(255, 0, 102, 0.5),
+                    0 0 60px rgba(255, 0, 102, 0.3);
+            }
+            to { 
+                text-shadow: 
+                    0 0 30px rgba(255, 102, 0, 0.8),
+                    0 0 50px rgba(255, 204, 0, 0.6),
+                    0 0 70px rgba(51, 204, 51, 0.4);
+            }
         }
         
         .cake {
             font-size: 3.5em;
             margin: 20px 0;
-            animation: bounce 2s infinite;
-            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+            animation: bounce 2s infinite, cakeColor 5s infinite;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+            position: relative;
+        }
+        
+        @keyframes cakeColor {
+            0% { color: #ff0066; }
+            20% { color: #ff6600; }
+            40% { color: #ffcc00; }
+            60% { color: #33cc33; }
+            80% { color: #0099ff; }
+            100% { color: #6633ff; }
         }
         
         @keyframes bounce {
@@ -110,6 +188,11 @@
             margin: 20px 0;
             font-size: 1.2em;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
         }
         
         .wishes {
@@ -121,7 +204,9 @@
         }
         
         .wish {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 167, 38, 0.15));
+            background: linear-gradient(135deg, 
+                rgba(255, 0, 102, 0.2), 
+                rgba(255, 102, 0, 0.2));
             padding: 12px 20px;
             border-radius: 50px;
             font-size: 1em;
@@ -130,17 +215,52 @@
             backdrop-filter: blur(5px);
             position: relative;
             overflow: hidden;
+            animation: wishColor 6s infinite;
+        }
+        
+        @keyframes wishColor {
+            0% { 
+                background: linear-gradient(135deg, 
+                    rgba(255, 0, 102, 0.2), 
+                    rgba(255, 102, 0, 0.2));
+                border-color: rgba(255, 0, 102, 0.3);
+            }
+            25% { 
+                background: linear-gradient(135deg, 
+                    rgba(255, 102, 0, 0.2), 
+                    rgba(255, 204, 0, 0.2));
+                border-color: rgba(255, 102, 0, 0.3);
+            }
+            50% { 
+                background: linear-gradient(135deg, 
+                    rgba(255, 204, 0, 0.2), 
+                    rgba(51, 204, 51, 0.2));
+                border-color: rgba(255, 204, 0, 0.3);
+            }
+            75% { 
+                background: linear-gradient(135deg, 
+                    rgba(51, 204, 51, 0.2), 
+                    rgba(0, 153, 255, 0.2));
+                border-color: rgba(51, 204, 51, 0.3);
+            }
+            100% { 
+                background: linear-gradient(135deg, 
+                    rgba(0, 153, 255, 0.2), 
+                    rgba(102, 51, 255, 0.2));
+                border-color: rgba(0, 153, 255, 0.3);
+            }
         }
         
         .wish:hover {
             transform: translateY(-5px) scale(1.08);
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.25), rgba(255, 167, 38, 0.25));
-            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 10px 25px rgba(255, 0, 102, 0.4);
             border-color: rgba(255, 255, 255, 0.4);
         }
         
         button {
-            background: linear-gradient(135deg, #ff6b6b, #ffa726);
+            background: linear-gradient(45deg, 
+                #ff0066, #ff6600, #ffcc00);
+            background-size: 200% 200%;
             color: white;
             border: none;
             padding: 16px 45px;
@@ -151,30 +271,35 @@
             font-weight: 700;
             letter-spacing: 0.8px;
             transition: all 0.3s ease;
-            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
+            box-shadow: 
+                0 15px 30px rgba(255, 0, 102, 0.4),
+                0 0 20px rgba(255, 0, 102, 0.2);
             position: relative;
             z-index: 2;
             overflow: hidden;
+            animation: buttonGlow 3s infinite;
         }
         
-        button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.7s;
+        @keyframes buttonGlow {
+            0%, 100% { 
+                background-position: 0% 50%;
+                box-shadow: 
+                    0 15px 30px rgba(255, 0, 102, 0.4),
+                    0 0 20px rgba(255, 0, 102, 0.2);
+            }
+            50% { 
+                background-position: 100% 50%;
+                box-shadow: 
+                    0 15px 30px rgba(0, 153, 255, 0.4),
+                    0 0 20px rgba(0, 153, 255, 0.2);
+            }
         }
         
         button:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.6);
-        }
-        
-        button:hover::before {
-            left: 100%;
+            box-shadow: 
+                0 20px 40px rgba(255, 0, 102, 0.6),
+                0 0 30px rgba(255, 0, 102, 0.3);
         }
         
         button:active {
@@ -189,44 +314,44 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.9);
             z-index: 1000;
             justify-content: center;
             align-items: center;
             padding: 20px;
             animation: fadeIn 0.4s ease;
+            backdrop-filter: blur(10px);
         }
         
         .surprise-card {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.95), rgba(255, 167, 38, 0.95), rgba(155, 89, 182, 0.95));
+            background: linear-gradient(45deg, 
+                rgba(255, 0, 102, 0.9), 
+                rgba(255, 102, 0, 0.9), 
+                rgba(255, 204, 0, 0.9),
+                rgba(51, 204, 51, 0.9),
+                rgba(0, 153, 255, 0.9),
+                rgba(102, 51, 255, 0.9));
+            background-size: 400% 400%;
             border-radius: 25px;
             padding: 45px 35px;
             max-width: 550px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+            box-shadow: 
+                0 30px 70px rgba(0, 0, 0, 0.7),
+                0 0 0 2px rgba(255, 255, 255, 0.2),
+                0 0 60px rgba(255, 255, 255, 0.1) inset;
             border: 3px solid rgba(255, 255, 255, 0.3);
-            animation: slideUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: 
+                slideUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                surpriseBg 8s ease infinite;
             position: relative;
             overflow: hidden;
         }
         
-        .surprise-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: sparkle 20s linear infinite;
-            z-index: 0;
-        }
-        
-        @keyframes sparkle {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes surpriseBg {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         @keyframes slideUp {
@@ -250,7 +375,15 @@
             margin-bottom: 25px;
             color: white;
             font-weight: 900;
-            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            text-shadow: 
+                0 3px 10px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(255, 255, 255, 0.5);
+            animation: titlePulse 2s infinite;
+        }
+        
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         
         .surprise-message {
@@ -268,7 +401,7 @@
         
         .close-btn {
             background: rgba(255, 255, 255, 0.95);
-            color: #ff6b6b;
+            color: #ff0066;
             border: none;
             padding: 14px 40px;
             font-size: 1.2em;
@@ -304,7 +437,7 @@
             opacity: 0;
             animation: heartFloat 6s ease-out forwards;
             z-index: 2001;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+            filter: drop-shadow(0 0 8px currentColor);
         }
         
         @keyframes heartFloat {
@@ -331,7 +464,7 @@
             100% {
                 opacity: 0;
                 transform: translateY(-100px) rotate(225deg) scale(1);
-                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
+                filter: drop-shadow(0 0 15px currentColor);
             }
         }
         
@@ -350,20 +483,6 @@
                 max-height: 85vh;
                 overflow-y: auto;
             }
-            
-            .surprise-card::-webkit-scrollbar {
-                width: 6px;
-            }
-            
-            .surprise-card::-webkit-scrollbar-track {
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 10px;
-            }
-            
-            .surprise-card::-webkit-scrollbar-thumb {
-                background: rgba(255, 255, 255, 0.3);
-                border-radius: 10px;
-            }
         }
         
         @media (max-width: 480px) {
@@ -380,17 +499,13 @@
     </style>
 </head>
 <body>
-    <!-- Скрытый аудио элемент -->
-    <audio id="birthdayMusic" loop style="display: none;">
-        <!-- Локальная ссылка на музыку (можно заменить на свою) -->
-        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
-        <!-- Запасной источник -->
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    </audio>
+    <!-- Звездный фон -->
+    <div class="stars" id="stars"></div>
     
-    <div class="particles" id="particles"></div>
+    <!-- Контейнер для сердечек -->
     <div class="hearts-container" id="hearts"></div>
     
+    <!-- Основная карточка -->
     <div class="card">
         <h1>🎉 С ДНЁМ РОЖДЕНИЯ! 🎂</h1>
         <div class="name">Саша 💖</div>
@@ -435,51 +550,22 @@
     </div>
 
     <script>
-        // Функция для воспроизведения музыки
-        function playMusic() {
-            const music = document.getElementById('birthdayMusic');
+        // Создаем звездный фон
+        function createStars() {
+            const container = document.getElementById('stars');
+            const starCount = 150;
             
-            // Устанавливаем громкость
-            music.volume = 0.3;
-            
-            // Пытаемся воспроизвести
-            const playPromise = music.play();
-            
-            if (playPromise !== undefined) {
-                playPromise
-                    .then(() => {
-                        console.log("Музыка включена!");
-                    })
-                    .catch(error => {
-                        console.log("Автовоспроизведение заблокировано. Музыка включится при взаимодействии.");
-                        // Запускаем музыку при первом клике
-                        document.addEventListener('click', function startMusicOnClick() {
-                            music.play();
-                            document.removeEventListener('click', startMusicOnClick);
-                        }, { once: true });
-                    });
-            }
-        }
-        
-        // Создаем частицы фона
-        function createParticles() {
-            const container = document.getElementById('particles');
-            const count = 40;
-            
-            for (let i = 0; i < count; i++) {
-                const particle = document.createElement('div');
-                particle.style.position = 'fixed';
-                particle.style.width = Math.random() * 5 + 2 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.background = `rgba(${Math.random() * 100 + 155}, ${Math.random() * 100 + 155}, 255, ${Math.random() * 0.4 + 0.2})`;
-                particle.style.borderRadius = '50%';
-                particle.style.left = Math.random() * 100 + 'vw';
-                particle.style.top = Math.random() * 100 + 'vh';
-                particle.style.boxShadow = `0 0 ${Math.random() * 15 + 5}px rgba(255, 255, 255, 0.5)`;
-                particle.style.animation = `float ${Math.random() * 20 + 10}s infinite linear`;
-                particle.style.zIndex = '-1';
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = Math.random() * 2 + 2 + 's';
                 
-                container.appendChild(particle);
+                container.appendChild(star);
             }
         }
         
@@ -495,13 +581,13 @@
             
             // Обновляем основную кнопку
             button.textContent = 'Сюрприз открыт! 🎉';
-            button.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
+            button.style.background = 'linear-gradient(45deg, #00cc66, #00ff99)';
             button.disabled = true;
             
             // Запускаем сердечки ПОВЕРХ сюрприза
             createHearts();
             
-            // Вибрация
+            // Вибрация (если поддерживается)
             if (navigator.vibrate) navigator.vibrate([150, 100, 150]);
             
             // Блокируем прокрутку фона
@@ -522,12 +608,11 @@
             // Разблокируем прокрутку
             document.body.style.overflow = 'auto';
             
-            // Восстанавливаем основную кнопку (опционально)
+            // Восстанавливаем основную кнопку
             setTimeout(() => {
                 const mainButton = document.querySelector('.card button');
                 if (mainButton) {
                     mainButton.textContent = 'Открыть сюрприз 🎁';
-                    mainButton.style.background = 'linear-gradient(135deg, #ff6b6b, #ffa726)';
                     mainButton.disabled = false;
                 }
             }, 300);
@@ -539,7 +624,8 @@
             container.style.display = 'block';
             
             const heartColors = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🩷', '🤍', '🤎', '💖', '💝', '💘', '💗'];
-            const heartCount = 50;
+            const heartColorsHex = ['#ff0066', '#ff6600', '#ffcc00', '#33cc33', '#0099ff', '#6633ff', '#ff66cc', '#ffffff', '#8b4513'];
+            const heartCount = 60;
             
             for (let i = 0; i < heartCount; i++) {
                 setTimeout(() => {
@@ -547,10 +633,11 @@
                     heart.className = 'heart';
                     heart.textContent = heartColors[Math.floor(Math.random() * heartColors.length)];
                     heart.style.left = Math.random() * 100 + 'vw';
-                    heart.style.fontSize = Math.random() * 30 + 25 + 'px';
+                    heart.style.fontSize = Math.random() * 35 + 25 + 'px';
                     heart.style.animationDelay = Math.random() * 0.5 + 's';
                     heart.style.animationDuration = Math.random() * 4 + 4 + 's';
-                    heart.style.filter = `drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) brightness(${Math.random() * 0.5 + 0.8})`;
+                    heart.style.color = heartColorsHex[Math.floor(Math.random() * heartColorsHex.length)];
+                    heart.style.filter = `drop-shadow(0 0 10px ${heart.style.color}) brightness(${Math.random() * 0.5 + 0.8})`;
                     
                     // Добавляем случайное движение влево-вправо
                     heart.style.setProperty('--x-move', `${Math.random() * 100 - 50}px`);
@@ -563,7 +650,7 @@
                             heart.remove();
                         }
                     }, 8000);
-                }, i * 100); // Задержка между появлением сердечек
+                }, i * 80); // Задержка между появлением сердечек
             }
             
             // Скрываем контейнер через 8 секунд
@@ -587,24 +674,13 @@
             }
         });
         
-        // Инициализация
+        // Инициализация при загрузке
         window.addEventListener('load', () => {
-            createParticles();
+            createStars();
             
-            // Запускаем музыку с небольшой задержкой
-            setTimeout(playMusic, 500);
-            
-            // Добавляем анимацию для частиц
+            // Добавляем кастомные анимации
             const style = document.createElement('style');
             style.textContent = `
-                @keyframes float {
-                    0% { transform: translateY(0) translateX(0); }
-                    25% { transform: translateY(-20px) translateX(10px); }
-                    50% { transform: translateY(-40px) translateX(-10px); }
-                    75% { transform: translateY(-20px) translateX(5px); }
-                    100% { transform: translateY(0) translateX(0); }
-                }
-                
                 @keyframes heartFloat {
                     0% {
                         opacity: 1;
@@ -629,7 +705,7 @@
                     100% {
                         opacity: 0;
                         transform: translateY(-100px) translateX(calc(var(--x-move, 0) * -1)) rotate(225deg) scale(1);
-                        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) brightness(1.2);
+                        filter: drop-shadow(0 0 15px currentColor) brightness(1.2);
                     }
                 }
             `;
