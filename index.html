@@ -51,9 +51,10 @@
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-15px) rotate(0.5deg); }
-            75% { transform: translateY(-8px) rotate(-0.5deg); }
+            0%, 100% { transform: translateY(0px) translateX(0); }
+            25% { transform: translateY(-12px) translateX(-3px); }
+            50% { transform: translateY(-8px) translateX(3px); }
+            75% { transform: translateY(-12px) translateX(2px); }
         }
         
         h1 {
@@ -93,18 +94,13 @@
         .cake {
             font-size: 3.5em;
             margin: 20px 0;
-            animation: bounce 2s infinite, rotate 20s infinite linear;
+            animation: bounce 2s infinite;
             filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
         }
         
         @keyframes bounce {
             0%, 100% { transform: translateY(0) scale(1); }
             50% { transform: translateY(-15px) scale(1.1); }
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
         
         .message {
@@ -289,7 +285,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
         
-        /* Цветные сердечки */
+        /* Цветные сердечки поверх всего */
         .hearts-container {
             position: fixed;
             top: 0;
@@ -297,7 +293,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 100;
+            z-index: 2000;
             display: none;
         }
         
@@ -305,24 +301,45 @@
             position: absolute;
             font-size: 24px;
             opacity: 0;
-            animation: heartFloat 4s ease-in forwards;
+            animation: heartFloat 6s ease-out forwards;
+            z-index: 2001;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
         }
         
         @keyframes heartFloat {
             0% {
                 opacity: 1;
-                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                transform: translateY(100vh) rotate(0deg) scale(0.8);
             }
-            10% {
+            20% {
                 opacity: 0.9;
+                transform: translateY(80vh) rotate(45deg) scale(1);
             }
-            90% {
+            40% {
+                opacity: 0.8;
+                transform: translateY(60vh) rotate(90deg) scale(1.1);
+            }
+            60% {
                 opacity: 0.7;
+                transform: translateY(40vh) rotate(135deg) scale(1.2);
+            }
+            80% {
+                opacity: 0.6;
+                transform: translateY(20vh) rotate(180deg) scale(1.1);
             }
             100% {
                 opacity: 0;
-                transform: translateY(-100px) rotate(720deg) scale(1.2);
+                transform: translateY(-100px) rotate(225deg) scale(1);
+                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
             }
+        }
+        
+        /* Пузырьки для эффекта воздушных шариков */
+        .balloon {
+            position: fixed;
+            pointer-events: none;
+            z-index: 2002;
+            display: none;
         }
         
         /* Адаптация */
@@ -433,6 +450,7 @@
                 particle.style.top = Math.random() * 100 + 'vh';
                 particle.style.boxShadow = `0 0 ${Math.random() * 15 + 5}px rgba(255, 255, 255, 0.5)`;
                 particle.style.animation = `float ${Math.random() * 20 + 10}s infinite linear`;
+                particle.style.zIndex = '-1';
                 
                 container.appendChild(particle);
             }
@@ -453,7 +471,7 @@
             button.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
             button.disabled = true;
             
-            // Запускаем сердечки
+            // Запускаем сердечки ПОВЕРХ сюрприза
             createHearts();
             
             // Вибрация
@@ -473,38 +491,44 @@
             document.body.style.overflow = 'auto';
         }
         
-        // Создаем цветные сердечки
+        // Создаем цветные сердечки ПОВЕРХ всего
         function createHearts() {
             const container = document.getElementById('hearts');
             container.style.display = 'block';
             
-            const heartColors = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🩷', '🤍', '🤎'];
-            const heartCount = 60;
+            const heartColors = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🩷', '🤍', '🤎', '💖', '💝', '💘', '💗'];
+            const heartCount = 50;
             
             for (let i = 0; i < heartCount; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.textContent = heartColors[Math.floor(Math.random() * heartColors.length)];
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.fontSize = Math.random() * 25 + 20 + 'px';
-                heart.style.animationDelay = Math.random() * 3 + 's';
-                heart.style.animationDuration = Math.random() * 3 + 3 + 's';
-                
-                container.appendChild(heart);
-                
-                // Удаляем сердечки после анимации
                 setTimeout(() => {
-                    if (heart.parentNode) {
-                        heart.remove();
-                    }
-                }, 7000);
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.textContent = heartColors[Math.floor(Math.random() * heartColors.length)];
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.fontSize = Math.random() * 30 + 25 + 'px';
+                    heart.style.animationDelay = Math.random() * 0.5 + 's';
+                    heart.style.animationDuration = Math.random() * 4 + 4 + 's';
+                    heart.style.filter = `drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) brightness(${Math.random() * 0.5 + 0.8})`;
+                    
+                    // Добавляем случайное движение влево-вправо
+                    heart.style.setProperty('--x-move', `${Math.random() * 100 - 50}px`);
+                    
+                    container.appendChild(heart);
+                    
+                    // Удаляем сердечки после анимации
+                    setTimeout(() => {
+                        if (heart.parentNode) {
+                            heart.remove();
+                        }
+                    }, 8000);
+                }, i * 100); // Задержка между появлением сердечек
             }
             
-            // Скрываем контейнер через 6 секунд
+            // Скрываем контейнер через 8 секунд
             setTimeout(() => {
                 container.style.display = 'none';
                 container.innerHTML = '';
-            }, 6000);
+            }, 8000);
         }
         
         // Закрытие по клику на оверлей
@@ -534,6 +558,34 @@
                     50% { transform: translateY(-40px) translateX(-10px); }
                     75% { transform: translateY(-20px) translateX(5px); }
                     100% { transform: translateY(0) translateX(0); }
+                }
+                
+                @keyframes heartFloat {
+                    0% {
+                        opacity: 1;
+                        transform: translateY(100vh) translateX(0) rotate(0deg) scale(0.8);
+                    }
+                    20% {
+                        opacity: 0.9;
+                        transform: translateY(80vh) translateX(var(--x-move, 0)) rotate(45deg) scale(1);
+                    }
+                    40% {
+                        opacity: 0.8;
+                        transform: translateY(60vh) translateX(calc(var(--x-move, 0) * -0.5)) rotate(90deg) scale(1.1);
+                    }
+                    60% {
+                        opacity: 0.7;
+                        transform: translateY(40vh) translateX(var(--x-move, 0)) rotate(135deg) scale(1.2);
+                    }
+                    80% {
+                        opacity: 0.6;
+                        transform: translateY(20vh) translateX(calc(var(--x-move, 0) * 0.5)) rotate(180deg) scale(1.1);
+                    }
+                    100% {
+                        opacity: 0;
+                        transform: translateY(-100px) translateX(calc(var(--x-move, 0) * -1)) rotate(225deg) scale(1);
+                        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) brightness(1.2);
+                    }
                 }
             `;
             document.head.appendChild(style);
