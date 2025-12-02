@@ -11,7 +11,8 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #ff5858 100%);
             background-size: 400% 400%;
-            height: 100vh;
+            min-height: 100vh;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -332,14 +333,6 @@
                 transform: translateY(-100px) rotate(225deg) scale(1);
                 filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
             }
-        }
-        
-        /* Пузырьки для эффекта воздушных шариков */
-        .balloon {
-            position: fixed;
-            pointer-events: none;
-            z-index: 2002;
-            display: none;
         }
         
         /* Адаптация */
