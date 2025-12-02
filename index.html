@@ -30,13 +30,6 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
             animation: float 6s ease-in-out infinite;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        
-        .card::-webkit-scrollbar {
-            width: 0;
-            display: none;
         }
         
         @keyframes float {
@@ -47,8 +40,8 @@
         h1 {
             background: linear-gradient(90deg, #ff6b6b, #ffa726);
             -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             background-clip: text;
-            color: transparent;
             font-size: 2.2em;
             margin-bottom: 5px;
             font-weight: 800;
@@ -60,4 +53,240 @@
             font-weight: 900;
             margin: 10px 0;
             letter-spacing: 2px;
-            color:
+            color: white;
+            text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+        }
+        
+        .cake {
+            font-size: 3em;
+            margin: 15px 0;
+            animation: bounce 1.5s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .message {
+            color: #ccc;
+            line-height: 1.5;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        
+        .wishes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 20px 0;
+        }
+        
+        .wish {
+            background: rgba(255, 107, 107, 0.1);
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 107, 107, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .wish:hover {
+            background: rgba(255, 107, 107, 0.2);
+            transform: scale(1.05);
+        }
+        
+        button {
+            background: linear-gradient(90deg, #ff6b6b, #ffa726);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 15px 0;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+        .hidden {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            background: rgba(40, 40, 50, 0.6);
+            border-radius: 15px;
+            border-left: 3px solid #ff6b6b;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 107, 107, 0.7);
+            border-radius: 50%;
+            animation: floatUp 15s infinite linear;
+        }
+        
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
+        }
+        
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+            display: none;
+        }
+        
+        .confetti-piece {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--c);
+            border-radius: 50%;
+            animation: fall 3s linear forwards;
+        }
+        
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="confetti" id="confetti"></div>
+    
+    <div class="card">
+        <h1>🎉 С ДНЁМ РОЖДЕНИЯ! 🎂</h1>
+        <div class="name">Саша 💖</div>
+        <div class="cake">✨🎁✨</div>
+        
+        <div class="message">
+            <p>Привет! 😊 Сегодня твой день!</p>
+            <p>Желаю тебе улыбок каждый день, верных друзей рядом и чтобы все мечты сбывались! 🌟</p>
+        </div>
+        
+        <div class="wishes">
+            <div class="wish">💫 Удачи</div>
+            <div class="wish">⚡ Энергии</div>
+            <div class="wish">🌈 Впечатлений</div>
+        </div>
+        
+        <button onclick="showMessage()">Открыть сюрприз 🎁</button>
+        
+        <div class="hidden" id="message">
+            <p>Ты делаешь мир лучше просто тем, что в нём есть! 💕</p>
+            <p>Оставайся такой же amazing! 😎✨</p>
+            <p>Пусть этот год будет самым крутым! 🚀</p>
+            <div style="margin-top: 15px; color: #ffa726; font-weight: 600;">
+                С днём рождения! 🥳🎉
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Создаем частицы
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const count = 30;
+            
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.background = `rgba(255, ${Math.random() * 100 + 107}, ${Math.random() * 100 + 107}, ${Math.random() * 0.5 + 0.3})`;
+                container.appendChild(particle);
+            }
+        }
+        
+        // Показываем сообщение
+        function showMessage() {
+            const message = document.getElementById('message');
+            const button = document.querySelector('button');
+            
+            message.style.display = 'block';
+            button.textContent = 'Сюрприз открыт! 🎉';
+            button.style.background = 'linear-gradient(90deg, #00b894, #00cec9)';
+            button.disabled = true;
+            
+            // Конфетти
+            createConfetti();
+            
+            // Вибрация
+            if (navigator.vibrate) navigator.vibrate(100);
+        }
+        
+        // Создаем конфетти
+        function createConfetti() {
+            const container = document.getElementById('confetti');
+            container.style.display = 'block';
+            
+            const colors = ['#ff6b6b', '#ffa726', '#00cec9', '#a29bfe'];
+            
+            for (let i = 0; i < 50; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                piece.style.setProperty('--c', colors[Math.floor(Math.random() * colors.length)]);
+                piece.style.left = Math.random() * 100 + 'vw';
+                piece.style.animationDelay = Math.random() * 2 + 's';
+                
+                container.appendChild(piece);
+                
+                setTimeout(() => piece.remove(), 3000);
+            }
+            
+            setTimeout(() => {
+                container.style.display = 'none';
+                container.innerHTML = '';
+            }, 3000);
+        }
+        
+        // Инициализация
+        window.addEventListener('load', () => {
+            createParticles();
+            
+            // Адаптация под высоту экрана
+            const card = document.querySelector('.card');
+            const viewportHeight = window.innerHeight;
+            const cardHeight = card.offsetHeight;
+            
+            if (cardHeight > viewportHeight * 0.85) {
+                card.style.transform = 'scale(0.85)';
+            }
+        });
+    </script>
+</body>
+</html>
