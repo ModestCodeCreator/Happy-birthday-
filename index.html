@@ -9,7 +9,8 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #ff5858 100%);
+            background-size: 400% 400%;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -18,114 +19,169 @@
             padding: 20px;
             overflow: hidden;
             position: relative;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .card {
-            background: rgba(25, 25, 35, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
+            background: rgba(25, 25, 35, 0.85);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 35px;
             width: 90%;
             max-width: 500px;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            animation: float 8s ease-in-out infinite;
             position: relative;
             z-index: 1;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
         
         .surprise-open .card {
-            transform: scale(0.95);
-            filter: blur(3px);
+            transform: scale(0.92);
+            filter: blur(5px);
+            opacity: 0.9;
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(0.5deg); }
+            75% { transform: translateY(-8px) rotate(-0.5deg); }
         }
         
         h1 {
-            background: linear-gradient(90deg, #ff6b6b, #ffa726);
+            background: linear-gradient(90deg, #ff6b6b, #ffa726, #ff6b6b);
+            background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 2.2em;
-            margin-bottom: 5px;
-            font-weight: 800;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 900;
             line-height: 1.2;
+            animation: gradientText 3s ease infinite;
+        }
+        
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .name {
-            font-size: 2.8em;
+            font-size: 3.2em;
             font-weight: 900;
-            margin: 10px 0;
-            letter-spacing: 2px;
+            margin: 15px 0;
+            letter-spacing: 1.5px;
             color: white;
-            text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+            text-shadow: 0 0 30px rgba(255, 107, 107, 0.7);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255, 107, 107, 0.7); }
+            to { text-shadow: 0 0 30px rgba(255, 107, 107, 0.9), 0 0 40px rgba(255, 107, 107, 0.6); }
         }
         
         .cake {
-            font-size: 3em;
-            margin: 15px 0;
-            animation: bounce 1.5s infinite;
+            font-size: 3.5em;
+            margin: 20px 0;
+            animation: bounce 2s infinite, rotate 20s infinite linear;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
         }
         
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.1); }
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         .message {
-            color: #ccc;
-            line-height: 1.5;
-            margin: 15px 0;
-            font-size: 1.1em;
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin: 20px 0;
+            font-size: 1.2em;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
         
         .wishes {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 8px;
-            margin: 20px 0;
+            gap: 12px;
+            margin: 25px 0;
         }
         
         .wish {
-            background: rgba(255, 107, 107, 0.1);
-            padding: 10px 15px;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 167, 38, 0.15));
+            padding: 12px 20px;
             border-radius: 50px;
-            font-size: 0.9em;
-            border: 1px solid rgba(255, 107, 107, 0.2);
+            font-size: 1em;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
         }
         
         .wish:hover {
-            background: rgba(255, 107, 107, 0.2);
-            transform: scale(1.05);
+            transform: translateY(-5px) scale(1.08);
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.25), rgba(255, 167, 38, 0.25));
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+            border-color: rgba(255, 255, 255, 0.4);
         }
         
         button {
-            background: linear-gradient(90deg, #ff6b6b, #ffa726);
+            background: linear-gradient(135deg, #ff6b6b, #ffa726);
             color: white;
             border: none;
-            padding: 14px 35px;
-            font-size: 1.1em;
+            padding: 16px 45px;
+            font-size: 1.3em;
             border-radius: 50px;
             cursor: pointer;
-            margin: 15px 0;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            margin: 20px 0;
+            font-weight: 700;
+            letter-spacing: 0.8px;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
             position: relative;
             z-index: 2;
+            overflow: hidden;
+        }
+        
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s;
         }
         
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 25px rgba(255, 107, 107, 0.4);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.6);
+        }
+        
+        button:hover::before {
+            left: 100%;
+        }
+        
+        button:active {
+            transform: translateY(-2px) scale(1.02);
         }
         
         /* Окно сюрприза */
@@ -136,50 +192,50 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             z-index: 1000;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.4s ease;
         }
         
         .surprise-card {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.9), rgba(255, 167, 38, 0.9));
-            border-radius: 20px;
-            padding: 40px 30px;
-            max-width: 500px;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.95), rgba(255, 167, 38, 0.95), rgba(155, 89, 182, 0.95));
+            border-radius: 25px;
+            padding: 45px 35px;
+            max-width: 550px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-            border: 2px solid white;
-            animation: slideUp 0.5s ease-out;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            animation: slideUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
         }
         
         .surprise-card::before {
-            content: '✨✨✨';
+            content: '';
             position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 2em;
-            opacity: 0.3;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: sparkle 20s linear infinite;
+            z-index: 0;
         }
         
-        .surprise-card::after {
-            content: '🎉🎉🎉';
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 2em;
-            opacity: 0.3;
+        @keyframes sparkle {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         @keyframes slideUp {
             from { 
                 opacity: 0;
-                transform: translateY(50px) scale(0.8);
+                transform: translateY(80px) scale(0.7);
             }
             to { 
                 opacity: 1;
@@ -193,67 +249,48 @@
         }
         
         .surprise-title {
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            font-size: 2.2em;
+            margin-bottom: 25px;
             color: white;
-            font-weight: 800;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-weight: 900;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
         
         .surprise-message {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            font-size: 1.4em;
+            line-height: 1.7;
+            margin-bottom: 30px;
             color: white;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .close-btn {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             color: #ff6b6b;
             border: none;
-            padding: 12px 30px;
-            font-size: 1em;
+            padding: 14px 40px;
+            font-size: 1.2em;
             border-radius: 50px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
         }
         
         .close-btn:hover {
-            transform: scale(1.05);
-            background: #f0f0f0;
+            transform: scale(1.08);
+            background: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
         
-        /* Частицы и конфетти */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: rgba(255, 107, 107, 0.7);
-            border-radius: 50%;
-            animation: floatUp 15s infinite linear;
-        }
-        
-        @keyframes floatUp {
-            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
-        }
-        
-        .confetti {
+        /* Цветные сердечки */
+        .hearts-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -264,47 +301,77 @@
             display: none;
         }
         
-        .confetti-piece {
+        .heart {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background: var(--c);
-            border-radius: 50%;
-            animation: fall 3s linear forwards;
+            font-size: 24px;
+            opacity: 0;
+            animation: heartFloat 4s ease-in forwards;
         }
         
-        @keyframes fall {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        @keyframes heartFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+            }
+            10% {
+                opacity: 0.9;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) rotate(720deg) scale(1.2);
+            }
         }
         
         /* Адаптация */
         @media (max-height: 700px) {
             .card { padding: 25px; }
             h1 { font-size: 2em; }
-            .name { font-size: 2.3em; }
-            .cake { font-size: 2.5em; margin: 10px 0; }
-            .message { font-size: 1em; margin: 10px 0; }
-            .wishes { margin: 15px 0; }
-            button { padding: 12px 30px; font-size: 1em; }
+            .name { font-size: 2.5em; }
+            .cake { font-size: 2.8em; margin: 15px 0; }
+            .message { font-size: 1.1em; margin: 15px 0; }
+            .wishes { margin: 20px 0; }
+            button { padding: 14px 35px; font-size: 1.1em; }
             
             .surprise-card {
-                padding: 25px 20px;
-                max-height: 90vh;
+                padding: 30px 25px;
+                max-height: 85vh;
                 overflow-y: auto;
+            }
+            
+            .surprise-card::-webkit-scrollbar {
+                width: 6px;
+            }
+            
+            .surprise-card::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+            }
+            
+            .surprise-card::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 10px;
             }
         }
         
         @media (max-width: 480px) {
-            .card { padding: 20px; }
-            .name { font-size: 2.1em; }
-            h1 { font-size: 1.8em; }
+            .card { padding: 25px; }
+            .name { font-size: 2.4em; }
+            h1 { font-size: 2em; }
+            .cake { font-size: 2.8em; }
+            .wishes { gap: 8px; }
+            .wish { padding: 10px 16px; font-size: 0.9em; }
+            
+            .surprise-title { font-size: 1.8em; }
+            .surprise-message { font-size: 1.2em; padding: 15px; }
         }
     </style>
 </head>
 <body>
     <div class="particles" id="particles"></div>
-    <div class="confetti" id="confetti"></div>
+    <div class="hearts-container" id="hearts"></div>
     
     <div class="card">
         <h1>🎉 С ДНЁМ РОЖДЕНИЯ! 🎂</h1>
@@ -320,6 +387,7 @@
             <div class="wish">💫 Удачи</div>
             <div class="wish">⚡ Энергии</div>
             <div class="wish">🌈 Впечатлений</div>
+            <div class="wish">❤️ Любви</div>
         </div>
         
         <button onclick="showSurprise()">Открыть сюрприз 🎁</button>
@@ -329,19 +397,17 @@
     <div class="surprise-overlay" id="surpriseOverlay">
         <div class="surprise-card">
             <div class="surprise-content">
-                <div class="surprise-title">🎁 СЮРПРИЗ ДЛЯ САШИ! 🎁</div>
+                <div class="surprise-title">🎁 Сюрприз 🎁</div>
                 
                 <div class="surprise-message">
-                    <p>Ты делаешь мир лучше просто тем, что в нём есть! 💕</p>
-                    <p>Оставайся такой же amazing! 😎✨</p>
-                    <p>Пусть этот год будет самым крутым! 🚀</p>
-                    <p style="margin-top: 20px; font-size: 1.3em; font-weight: bold;">
-                        С днём рождения! 🥳🎉
+                    <p>Ты делаешь мир лучше тем, что ты в нем есть! 💕</p>
+                    <p>Оставайся такой же яркой! ✨😎</p>
+                    <p>Пусть следующий год будет лучше! 🚀🌟</p>
+                    <p style="margin-top: 25px; font-size: 1.5em; font-weight: 800; color: #fffacd;">
+                        С днём рождения! 🥳🎉💖
                     </p>
-                    <div style="margin-top: 25px; padding: 15px; background: rgba(255, 255, 255, 0.2); border-radius: 15px;">
-                        <p style="font-style: italic; font-size: 0.9em;">
-                            P.S. Сохрани эту страницу — она всегда будет доступна по ссылке!
-                        </p>
+                    <div style="margin-top: 30px; font-size: 1.8em;">
+                        🌈🎂🎈🎊🎀🌸
                     </div>
                 </div>
                 
@@ -351,17 +417,23 @@
     </div>
 
     <script>
-        // Создаем частицы
+        // Создаем частицы фона
         function createParticles() {
             const container = document.getElementById('particles');
-            const count = 30;
+            const count = 40;
             
             for (let i = 0; i < count; i++) {
                 const particle = document.createElement('div');
-                particle.className = 'particle';
+                particle.style.position = 'fixed';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = `rgba(${Math.random() * 100 + 155}, ${Math.random() * 100 + 155}, 255, ${Math.random() * 0.4 + 0.2})`;
+                particle.style.borderRadius = '50%';
                 particle.style.left = Math.random() * 100 + 'vw';
-                particle.style.animationDelay = Math.random() * 10 + 's';
-                particle.style.background = `rgba(255, ${Math.random() * 100 + 107}, ${Math.random() * 100 + 107}, ${Math.random() * 0.5 + 0.3})`;
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.boxShadow = `0 0 ${Math.random() * 15 + 5}px rgba(255, 255, 255, 0.5)`;
+                particle.style.animation = `float ${Math.random() * 20 + 10}s infinite linear`;
+                
                 container.appendChild(particle);
             }
         }
@@ -378,14 +450,14 @@
             
             // Обновляем основную кнопку
             button.textContent = 'Сюрприз открыт! 🎉';
-            button.style.background = 'linear-gradient(90deg, #00b894, #00cec9)';
+            button.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
             button.disabled = true;
             
-            // Запускаем конфетти
-            createConfetti();
+            // Запускаем сердечки
+            createHearts();
             
             // Вибрация
-            if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+            if (navigator.vibrate) navigator.vibrate([150, 100, 150]);
             
             // Блокируем прокрутку фона
             document.body.style.overflow = 'hidden';
@@ -401,32 +473,38 @@
             document.body.style.overflow = 'auto';
         }
         
-        // Создаем конфетти
-        function createConfetti() {
-            const container = document.getElementById('confetti');
+        // Создаем цветные сердечки
+        function createHearts() {
+            const container = document.getElementById('hearts');
             container.style.display = 'block';
             
-            const colors = ['#ff6b6b', '#ffa726', '#00cec9', '#a29bfe', '#ffffff'];
+            const heartColors = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🩷', '🤍', '🤎'];
+            const heartCount = 60;
             
-            for (let i = 0; i < 80; i++) {
-                const piece = document.createElement('div');
-                piece.className = 'confetti-piece';
-                piece.style.setProperty('--c', colors[Math.floor(Math.random() * colors.length)]);
-                piece.style.left = Math.random() * 100 + 'vw';
-                piece.style.animationDelay = Math.random() * 2 + 's';
-                piece.style.width = Math.random() * 10 + 8 + 'px';
-                piece.style.height = piece.style.width;
-                piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.textContent = heartColors[Math.floor(Math.random() * heartColors.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = Math.random() * 25 + 20 + 'px';
+                heart.style.animationDelay = Math.random() * 3 + 's';
+                heart.style.animationDuration = Math.random() * 3 + 3 + 's';
                 
-                container.appendChild(piece);
+                container.appendChild(heart);
                 
-                setTimeout(() => piece.remove(), 3000);
+                // Удаляем сердечки после анимации
+                setTimeout(() => {
+                    if (heart.parentNode) {
+                        heart.remove();
+                    }
+                }, 7000);
             }
             
+            // Скрываем контейнер через 6 секунд
             setTimeout(() => {
                 container.style.display = 'none';
                 container.innerHTML = '';
-            }, 3000);
+            }, 6000);
         }
         
         // Закрытие по клику на оверлей
@@ -447,13 +525,30 @@
         window.addEventListener('load', () => {
             createParticles();
             
-            // Адаптация под высоту экрана
+            // Добавляем анимацию для частиц
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0% { transform: translateY(0) translateX(0); }
+                    25% { transform: translateY(-20px) translateX(10px); }
+                    50% { transform: translateY(-40px) translateX(-10px); }
+                    75% { transform: translateY(-20px) translateX(5px); }
+                    100% { transform: translateY(0) translateX(0); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+        
+        // Адаптация размера карточки
+        window.addEventListener('resize', () => {
             const card = document.querySelector('.card');
             const viewportHeight = window.innerHeight;
             const cardHeight = card.offsetHeight;
             
-            if (cardHeight > viewportHeight * 0.85) {
+            if (cardHeight > viewportHeight * 0.9) {
                 card.style.transform = 'scale(0.85)';
+            } else {
+                card.style.transform = 'scale(1)';
             }
         });
     </script>
