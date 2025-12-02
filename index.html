@@ -1,0 +1,758 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>be1.ru</title>
+</head>
+<body>
+<p>&lt;!DOCTYPE html&gt;<br />
+&lt;html lang=&quot;ru&quot;&gt;<br />
+&lt;head&gt;<br />
+&nbsp; &nbsp; &lt;meta charset=&quot;UTF-8&quot;&gt;<br />
+&nbsp; &nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br />
+&nbsp; &nbsp; &lt;title&gt;Для Сашеньки с любовью ❤️&lt;/title&gt;<br />
+&nbsp; &nbsp; &lt;style&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; * { margin: 0; padding: 0; box-sizing: border-box; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; body {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-family: &#39;Segoe UI&#39;, Tahoma, Geneva, Verdana, sans-serif;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min-height: 100vh;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: flex;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; flex-direction: column;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; align-items: center;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; justify-content: center;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 20px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: #5a3d5c;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-align: center;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; overflow-x: hidden;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .container {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; max-width: 800px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: rgba(255, 255, 255, 0.98);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 30px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 30px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: relative;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; overflow: hidden;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 4px solid #ff6b8b;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: containerFloat 6s ease-in-out infinite;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes containerFloat {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0%, 100% { transform: translateY(0); }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 50% { transform: translateY(-10px); }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .header {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: #ff6b8b;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 2.8em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin-bottom: 15px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-shadow: 3px 3px 0px rgba(255, 107, 139, 0.2);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: rainbow 4s infinite;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes rainbow {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0% { color: #ff6b8b; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 25% { color: #ff8e53; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 50% { color: #00cec9; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 75% { color: #a29bfe; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100% { color: #ff6b8b; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .name {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: #ff4081;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 4em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-weight: 900;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 15px 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-transform: uppercase;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; letter-spacing: 3px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: linear-gradient(45deg, #ff6b8b, #ff8e53, #00cec9);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -webkit-background-clip: text;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -webkit-text-fill-color: transparent;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: glow 2s infinite alternate;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-shadow: 0 0 30px rgba(255, 107, 139, 0.3);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .cake {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 5em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 25px 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: bounce 1.8s infinite, rotate 10s infinite linear;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; filter: drop-shadow(0 8px 8px rgba(0,0,0,0.3));<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes rotate {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0% { transform: rotate(0deg); }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100% { transform: rotate(360deg); }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .message-box {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: linear-gradient(135deg, #fff5f7, #fff0f3);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 25px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 30px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 25px 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-left: 10px solid #ff6b8b;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-align: left;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.3em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; line-height: 1.8;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: inset 0 0 30px rgba(255, 107, 139, 0.15);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: relative;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; overflow: hidden;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .message-box::before {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; content: &#39;💌&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; top: 10px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; right: 10px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 3em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0.2;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .wishes-grid {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: grid;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; gap: 15px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 30px 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .wish-card {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: white;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 20px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 20px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transition: all 0.4s ease;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 2px solid transparent;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cursor: pointer;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: relative;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; overflow: hidden;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .wish-card:hover {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(-10px) scale(1.05);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-color: #ff6b8b;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 15px 30px rgba(255, 107, 139, 0.3);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .wish-card::after {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; content: &#39;&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; top: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: -100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transition: left 0.7s;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .wish-card:hover::after {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .wish-icon {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 2.5em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin-bottom: 15px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: block;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transition: transform 0.3s;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .wish-card:hover .wish-icon {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: scale(1.3);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .surprise-button {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: linear-gradient(135deg, #ff6b8b, #ff8e53, #ff6b8b);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-size: 200% 200%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: white;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 20px 50px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.5em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 60px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cursor: pointer;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 30px 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transition: all 0.4s;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-weight: bold;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; letter-spacing: 2px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 12px 25px rgba(255, 107, 139, 0.4);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: gradientShift 3s infinite alternate;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes gradientShift {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0% { background-position: 0% 50%; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100% { background-position: 100% 50%; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .surprise-button:hover {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(-5px) scale(1.05);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 20px 35px rgba(255, 107, 139, 0.6);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .surprise-button:active {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: scale(0.98);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .surprise-container {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: linear-gradient(135deg, #ffecd2, #fcb69f, #ffafbd);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 25px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 35px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin-top: 30px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: fadeInUp 1s ease;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 3px solid #ff6b8b;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: relative;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; overflow: hidden;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .surprise-container::before {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; content: &#39;✨✨✨&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; top: 10px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: 10px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 2em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0.3;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes fadeInUp {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; from {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(30px) scale(0.9);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; to {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(0) scale(1);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .hearts-bg {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: fixed;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; top: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pointer-events: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; z-index: -1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .heart-particle {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: #ff6b8b;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 28px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: floatUp 10s linear infinite;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes floatUp {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(100vh) rotate(0deg) scale(0.5);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(90vh) rotate(0deg) scale(1);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 90% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(-100px) rotate(720deg) scale(1.5);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .confetti {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: fixed;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; top: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pointer-events: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; z-index: 1000;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .confetti-piece {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 15px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 15px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: var(--color);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 50%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: confettiFall 3s linear forwards;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes confettiFall {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(-100px) rotate(0deg);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(100vh) rotate(360deg);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .signature-box {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin-top: 40px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 25px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 20px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 255, 0.9));<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 2px dashed #ff6b8b;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.4em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: relative;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .signature-box::after {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; content: &#39;💝&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; bottom: -15px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; right: -15px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 3em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: white;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 50%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 60px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 60px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: flex;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; align-items: center;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; justify-content: center;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 5px 15px rgba(0,0,0,0.2);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .my-name {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: #ff6b8b;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-weight: bold;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.8em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-shadow: 2px 2px 0px rgba(255, 107, 139, 0.2);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: inline-block;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 5px 15px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: white;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 10px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 0 10px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: namePulse 2s infinite;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes namePulse {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0%, 100% { transform: scale(1); }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 50% { transform: scale(1.05); }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .date {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: block;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 0.9em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: #888;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin-top: 10px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-style: italic;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @media (max-width: 768px) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .container {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 20px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 10px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .header {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 2em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .name {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 2.8em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .cake {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 3.5em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .message-box {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 20px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.1em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .wishes-grid {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; grid-template-columns: repeat(2, 1fr);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .wish-card {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 15px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .surprise-button {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 18px 40px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.3em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .signature-box {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 20px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @media (max-width: 480px) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .wishes-grid {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; grid-template-columns: 1fr;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .name {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 2.2em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .header {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.6em;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .fireworks {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: fixed;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; top: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pointer-events: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; z-index: -1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .firework {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 5px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 5px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 50%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: explode 1.5s ease-out forwards;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes explode {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(100vh) scale(0);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 50% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 100% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(var(--y)) translateX(var(--x)) scale(1);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &lt;/style&gt;<br />
+&nbsp; &nbsp; &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot;&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+&nbsp; &nbsp; &lt;div class=&quot;hearts-bg&quot; id=&quot;heartsBg&quot;&gt;&lt;/div&gt;<br />
+&nbsp; &nbsp; &lt;div class=&quot;confetti&quot; id=&quot;confetti&quot;&gt;&lt;/div&gt;<br />
+&nbsp; &nbsp; &lt;div class=&quot;fireworks&quot; id=&quot;fireworks&quot;&gt;&lt;/div&gt;<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &lt;div class=&quot;container&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;h1 class=&quot;header&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;i class=&quot;fas fa-birthday-cake&quot;&gt;&lt;/i&gt; С ДНЁМ РОЖДЕНИЯ! &lt;i class=&quot;fas fa-gift&quot;&gt;&lt;/i&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/h1&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;cake&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;i class=&quot;fas fa-birthday-cake&quot;&gt;&lt;/i&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;i class=&quot;fas fa-star&quot; style=&quot;position: absolute; font-size: 0.5em; margin-left: -20px; animation: twinkle 1s infinite alternate;&quot;&gt;&lt;/i&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;name&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; САШЕНЬКА<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style=&quot;font-size: 0.3em; margin-top: -10px;&quot;&gt;❤️ самая прекрасная ❤️&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;message-box&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;&lt;i class=&quot;fas fa-heart&quot; style=&quot;color: #ff6b8b; margin-right: 10px;&quot;&gt;&lt;/i&gt; Моя любимая, дорогая, неповторимая Сашенька!&lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Сегодня твой день &mdash; день, когда весь мир стал ярче, потому что в нём появилась ТЫ! Каждый момент рядом с тобой &mdash; это подарок судьбы, каждое твоё слово &mdash; музыка для моей души, каждая твоя улыбка &mdash; солнце в моём небе.&lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;В этот волшебный день я желаю тебе:&lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wishes-grid&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-card&quot; onclick=&quot;wishClick(this)&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-icon&quot;&gt;🌠&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-text&quot;&gt;Звёздных высот&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-card&quot; onclick=&quot;wishClick(this)&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-icon&quot;&gt;🌸&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-text&quot;&gt;Вечной весны в душе&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-card&quot; onclick=&quot;wishClick(this)&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-icon&quot;&gt;💎&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-text&quot;&gt;Драгоценных моментов&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-card&quot; onclick=&quot;wishClick(this)&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-icon&quot;&gt;🌈&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-text&quot;&gt;Радуги впечатлений&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-card&quot; onclick=&quot;wishClick(this)&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-icon&quot;&gt;🎶&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-text&quot;&gt;Мелодии счастья&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-card&quot; onclick=&quot;wishClick(this)&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-icon&quot;&gt;👑&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;wish-text&quot;&gt;Королевской жизни&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;button class=&quot;surprise-button&quot; onclick=&quot;showSurprise()&quot; id=&quot;surpriseBtn&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;i class=&quot;fas fa-gift&quot;&gt;&lt;/i&gt; НАЖМИ, ЧТОБЫ ОТКРЫТЬ СЮРПРИЗ! &lt;i class=&quot;fas fa-gift&quot;&gt;&lt;/i&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/button&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;surprise-container&quot; id=&quot;surpriseContainer&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h2 style=&quot;color: #ff6b8b; margin-bottom: 20px; font-size: 2em;&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;i class=&quot;fas fa-envelope-open-text&quot;&gt;&lt;/i&gt; СЕКРЕТНОЕ ПОСЛАНИЕ &lt;i class=&quot;fas fa-heart&quot;&gt;&lt;/i&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/h2&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style=&quot;font-size: 1.2em; line-height: 1.8; background: white; padding: 25px; border-radius: 15px; box-shadow: inset 0 0 20px rgba(255, 107, 139, 0.1);&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Сашенька, моя единственная и неповторимая!&lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Ты &mdash; тот лучик света, который освещает даже самый пасмурный день. Ты &mdash; та мелодия, которая звучит в моём сердце без остановки. С тобой я понял, что такое настоящее счастье.&lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Пусть каждый твой день будет наполнен:&lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul style=&quot;text-align: left; margin: 15px 0 15px 20px;&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;Нежными объятиями утра&lt;/li&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;Тёплыми лучами удачи днём&lt;/li&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;Волшебными моментами вечером&lt;/li&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;Сладкими снами ночью&lt;/li&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Ты заслуживаешь всего самого прекрасного в этом мире! И я обещаю делать всё, чтобы ты всегда улыбалась!&lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style=&quot;border-left: 4px solid #ff6b8b; padding-left: 15px; margin: 20px 0; font-style: italic;&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &quot;Любовь &mdash; это когда счастье другого человека необходимо для твоего собственного счастья.&quot;&lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span style=&quot;font-size: 0.9em; color: #888;&quot;&gt;И я счастлив только когда счастлива ты!&lt;/span&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style=&quot;margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #ff6b8b, #ff8e53); border-radius: 15px; color: white; font-size: 1.4em;&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;i class=&quot;fas fa-heartbeat&quot;&gt;&lt;/i&gt; Люблю тебя больше жизни! &lt;i class=&quot;fas fa-heartbeat&quot;&gt;&lt;/i&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style=&quot;font-size: 1.6em; margin-top: 10px;&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Твой &lt;span class=&quot;my-name&quot;&gt;МОДЕСТ&lt;/span&gt;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span style=&quot;font-size: 1.2em; margin-left: 10px;&quot;&gt;❤️💐🎂🎉&lt;/span&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;date&quot;&gt;Создано с бесконечной любовью&lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;signature-box&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Это поздравление будет жить вечно на просторах интернета!&lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Ты можешь открывать его когда захочешь, и оно всегда будет ждать тебя здесь.&lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p style=&quot;margin-top: 15px;&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Просто сохрани ссылку: &lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span style=&quot;background: #f0f0f0; padding: 5px 10px; border-radius: 5px; font-family: monospace; word-break: break-all;&quot;&gt;https://[твой-логин].github.io/happy-birthday-sasha/&lt;/span&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/p&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &lt;/div&gt;</p>
+
+<p>&nbsp; &nbsp; &lt;script&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Создаем летающие сердечки<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function createHearts() {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const heartsBg = document.getElementById(&#39;heartsBg&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const heartCount = window.innerWidth &lt; 768 ? 20 : 40;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (let i = 0; i &lt; heartCount; i++) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const heart = document.createElement(&#39;div&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.className = &#39;heart-particle&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.innerHTML = &#39;❤&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.style.left = Math.random() * 100 + &#39;vw&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.style.animationDelay = Math.random() * 5 + &#39;s&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.style.fontSize = (Math.random() * 20 + 15) + &#39;px&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.style.color = `hsl(${Math.random() * 60 + 320}, 100%, 65%)`;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heartsBg.appendChild(heart);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Клик по пожеланию<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function wishClick(element) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; element.style.transform = &#39;scale(1.1)&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; element.style.background = &#39;linear-gradient(135deg, #ff6b8b, #ff8e53)&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; element.style.color = &#39;white&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Создаем мини-конфетти<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; createMiniConfetti(element.getBoundingClientRect().x + 75, element.getBoundingClientRect().y + 50);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; element.style.transform = &#39;&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; element.style.background = &#39;&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; element.style.color = &#39;&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 500);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Мини-конфетти при клике на пожелание<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function createMiniConfetti(x, y) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const colors = [&#39;#ff6b8b&#39;, &#39;#ff8e53&#39;, &#39;#00cec9&#39;, &#39;#a29bfe&#39;, &#39;#fd79a8&#39;];<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (let i = 0; i &lt; 10; i++) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const confetti = document.createElement(&#39;div&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.className = &#39;confetti-piece&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.setProperty(&#39;--color&#39;, colors[Math.floor(Math.random() * colors.length)]);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.left = x + &#39;px&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.top = y + &#39;px&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.width = (Math.random() * 10 + 5) + &#39;px&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.height = confetti.style.width;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.borderRadius = Math.random() &gt; 0.5 ? &#39;50%&#39; : &#39;0&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.animationDelay = (Math.random() * 0.5) + &#39;s&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.setProperty(&#39;--x&#39;, (Math.random() * 100 - 50) + &#39;px&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.setProperty(&#39;--y&#39;, (Math.random() * 100 + 50) + &#39;px&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;confetti&#39;).appendChild(confetti);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.remove();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 3000);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Показываем сюрприз<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function showSurprise() {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const surpriseContainer = document.getElementById(&#39;surpriseContainer&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const surpriseBtn = document.getElementById(&#39;surpriseBtn&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Показываем сюрприз<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; surpriseContainer.style.display = &#39;block&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Обновляем кнопку<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; surpriseBtn.innerHTML = &#39;&lt;i class=&quot;fas fa-star&quot;&gt;&lt;/i&gt; СЮРПРИЗ ОТКРЫТ! &lt;i class=&quot;fas fa-star&quot;&gt;&lt;/i&gt;&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; surpriseBtn.style.background = &#39;linear-gradient(135deg, #00cec9, #00b894)&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; surpriseBtn.disabled = true;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; surpriseBtn.style.transform = &#39;scale(1)&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Запускаем масштабный эффект конфетти<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; launchConfetti();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Запускаем фейерверк<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; launchFireworks();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Вибрация (если поддерживается)<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (navigator.vibrate) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; navigator.vibrate([200, 100, 200]);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Прокручиваем к сюрпризу<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; surpriseContainer.scrollIntoView({ behavior: &#39;smooth&#39;, block: &#39;center&#39; });<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Запускаем конфетти<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function launchConfetti() {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const confettiContainer = document.getElementById(&#39;confetti&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confettiContainer.style.display = &#39;block&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const colors = [&#39;#ff6b8b&#39;, &#39;#ff8e53&#39;, &#39;#00cec9&#39;, &#39;#a29bfe&#39;, &#39;#fd79a8&#39;, &#39;#fffa65&#39;, &#39;#81ecec&#39;];<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const pieceCount = 150;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (let i = 0; i &lt; pieceCount; i++) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const confetti = document.createElement(&#39;div&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.className = &#39;confetti-piece&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.setProperty(&#39;--color&#39;, colors[Math.floor(Math.random() * colors.length)]);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.left = Math.random() * 100 + &#39;vw&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.animationDelay = (Math.random() * 2) + &#39;s&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.width = (Math.random() * 15 + 8) + &#39;px&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.height = confetti.style.width;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.borderRadius = Math.random() &gt; 0.5 ? &#39;50%&#39; : &#39;0&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.setProperty(&#39;--x&#39;, (Math.random() * 400 - 200) + &#39;px&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.style.setProperty(&#39;--y&#39;, (Math.random() * 100 + 100) + &#39;vh&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confettiContainer.appendChild(confetti);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confetti.remove();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 4000);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confettiContainer.style.display = &#39;none&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; confettiContainer.innerHTML = &#39;&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 3500);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Запускаем фейерверк<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function launchFireworks() {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const fireworksContainer = document.getElementById(&#39;fireworks&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fireworksContainer.style.display = &#39;block&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const colors = [&#39;#ff6b8b&#39;, &#39;#ff8e53&#39;, &#39;#00cec9&#39;, &#39;#a29bfe&#39;, &#39;#fd79a8&#39;, &#39;#fffa65&#39;];<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (let i = 0; i &lt; 20; i++) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const firework = document.createElement(&#39;div&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; firework.className = &#39;firework&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; firework.style.left = Math.random() * 90 + 5 + &#39;vw&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; firework.style.background = colors[Math.floor(Math.random() * colors.length)];<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; firework.style.setProperty(&#39;--x&#39;, (Math.random() * 100 - 50) + &#39;px&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; firework.style.setProperty(&#39;--y&#39;, (Math.random() * 100 + 100) + &#39;px&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; firework.style.animationDelay = (Math.random() * 0.5) + &#39;s&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fireworksContainer.appendChild(firework);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; firework.remove();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 1600);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, i * 150);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fireworksContainer.style.display = &#39;none&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fireworksContainer.innerHTML = &#39;&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 4000);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Добавляем эффект параллакса при движении мыши<br />
+&nbsp; &nbsp; &nbsp; &nbsp; document.addEventListener(&#39;mousemove&#39;, (e) =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const container = document.querySelector(&#39;.container&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const xAxis = (window.innerWidth / 2 - e.pageX) / 25;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const yAxis = (window.innerHeight / 2 - e.pageY) / 25;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; container.style.transform = `translateY(-10px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; });<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Убираем эффект параллакса при уходе мыши<br />
+&nbsp; &nbsp; &nbsp; &nbsp; document.addEventListener(&#39;mouseleave&#39;, () =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const container = document.querySelector(&#39;.container&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; container.style.transform = &#39;translateY(-10px) rotateY(0deg) rotateX(0deg)&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; });<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Инициализация при загрузке<br />
+&nbsp; &nbsp; &nbsp; &nbsp; window.addEventListener(&#39;load&#39;, () =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; createHearts();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Плавное появление<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.body.style.opacity = 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; let opacity = 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const fadeIn = setInterval(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity += 0.05;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.body.style.opacity = opacity;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (opacity &gt;= 1) clearInterval(fadeIn);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 50);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Автоматическая прокрутка к началу<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; window.scrollTo({ top: 0, behavior: &#39;smooth&#39; });<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log(&#39;🎂 Поздравление загружено! Для Сашеньки от Модеста ❤️&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; });<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Предотвращаем контекстное меню на телефонах<br />
+&nbsp; &nbsp; &nbsp; &nbsp; document.addEventListener(&#39;contextmenu&#39;, (e) =&gt; e.preventDefault());<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Добавляем звуковой эффект при клике (совместимый с браузерами)<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function playClickSound() {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Простой beep через Web Audio API<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const audioContext = new (window.AudioContext || window.webkitAudioContext)();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const oscillator = audioContext.createOscillator();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const gainNode = audioContext.createGain();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; oscillator.connect(gainNode);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; gainNode.connect(audioContext.destination);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; oscillator.frequency.value = 800;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; gainNode.gain.value = 0.1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; oscillator.start();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; oscillator.stop();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 100);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } catch (e) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Если Web Audio не поддерживается, ничего не делаем<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Добавляем звук при кликах<br />
+&nbsp; &nbsp; &nbsp; &nbsp; document.querySelectorAll(&#39;button, .wish-card&#39;).forEach(element =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; element.addEventListener(&#39;click&#39;, playClickSound);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; });<br />
+&nbsp; &nbsp; &lt;/script&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;</p>
+</body>
+</html>
