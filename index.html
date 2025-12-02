@@ -335,33 +335,6 @@
             }
         }
         
-        /* Кнопка управления музыкой */
-        .music-control {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 3000;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.5em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .music-control:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-        
         /* Адаптация */
         @media (max-height: 700px) {
             .card { padding: 25px; }
@@ -407,17 +380,16 @@
     </style>
 </head>
 <body>
-    <!-- Аудио элемент с музыкой -->
-    <audio id="birthdayMusic" loop>
+    <!-- Скрытый аудио элемент -->
+    <audio id="birthdayMusic" loop style="display: none;">
+        <!-- Локальная ссылка на музыку (можно заменить на свою) -->
         <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
+        <!-- Запасной источник -->
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
     
     <div class="particles" id="particles"></div>
     <div class="hearts-container" id="hearts"></div>
-    
-    <!-- Кнопка управления музыкой -->
-    <button class="music-control" id="musicToggle">♪</button>
     
     <div class="card">
         <h1>🎉 С ДНЁМ РОЖДЕНИЯ! 🎂</h1>
@@ -463,47 +435,31 @@
     </div>
 
     <script>
-        // Музыкальный плеер
-        const music = document.getElementById('birthdayMusic');
-        const musicToggle = document.getElementById('musicToggle');
-        let isMusicPlaying = false;
-        
         // Функция для воспроизведения музыки
         function playMusic() {
+            const music = document.getElementById('birthdayMusic');
+            
+            // Устанавливаем громкость
             music.volume = 0.3;
-            music.play().then(() => {
-                isMusicPlaying = true;
-                musicToggle.textContent = '♫';
-                musicToggle.style.background = 'rgba(255, 107, 107, 0.5)';
-            }).catch(error => {
-                console.log("Автовоспроизведение заблокировано. Нажмите на кнопку музыки.");
-                musicToggle.textContent = '♪';
-                musicToggle.title = "Нажмите для включения музыки";
-            });
-        }
-        
-        // Функция для остановки музыки
-        function stopMusic() {
-            music.pause();
-            isMusicPlaying = false;
-            musicToggle.textContent = '♪';
-            musicToggle.style.background = 'rgba(255, 255, 255, 0.2)';
-        }
-        
-        // Переключение музыки
-        musicToggle.addEventListener('click', function() {
-            if (isMusicPlaying) {
-                stopMusic();
-            } else {
-                playMusic();
+            
+            // Пытаемся воспроизвести
+            const playPromise = music.play();
+            
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        console.log("Музыка включена!");
+                    })
+                    .catch(error => {
+                        console.log("Автовоспроизведение заблокировано. Музыка включится при взаимодействии.");
+                        // Запускаем музыку при первом клике
+                        document.addEventListener('click', function startMusicOnClick() {
+                            music.play();
+                            document.removeEventListener('click', startMusicOnClick);
+                        }, { once: true });
+                    });
             }
-        });
-        
-        // Попытка автоматического воспроизведения при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            // Ждем немного перед воспроизведением
-            setTimeout(playMusic, 1000);
-        });
+        }
         
         // Создаем частицы фона
         function createParticles() {
@@ -530,7 +486,7 @@
         // Показываем сюрприз
         function showSurprise() {
             const overlay = document.getElementById('surpriseOverlay');
-            const button = document.querySelector('button');
+            const button = document.querySelector('.card button');
             const body = document.body;
             
             // Показываем оверлей
@@ -557,9 +513,24 @@
             const overlay = document.getElementById('surpriseOverlay');
             const body = document.body;
             
+            // Убираем оверлей
             overlay.style.display = 'none';
+            
+            // Восстанавливаем основной фон
             body.classList.remove('surprise-open');
+            
+            // Разблокируем прокрутку
             document.body.style.overflow = 'auto';
+            
+            // Восстанавливаем основную кнопку (опционально)
+            setTimeout(() => {
+                const mainButton = document.querySelector('.card button');
+                if (mainButton) {
+                    mainButton.textContent = 'Открыть сюрприз 🎁';
+                    mainButton.style.background = 'linear-gradient(135deg, #ff6b6b, #ffa726)';
+                    mainButton.disabled = false;
+                }
+            }, 300);
         }
         
         // Создаем цветные сердечки ПОВЕРХ всего
@@ -619,6 +590,9 @@
         // Инициализация
         window.addEventListener('load', () => {
             createParticles();
+            
+            // Запускаем музыку с небольшой задержкой
+            setTimeout(playMusic, 500);
             
             // Добавляем анимацию для частиц
             const style = document.createElement('style');
