@@ -17,10 +17,11 @@
             color: white;
             padding: 20px;
             overflow: hidden;
+            position: relative;
         }
         
         .card {
-            background: rgba(25, 25, 35, 0.9);
+            background: rgba(25, 25, 35, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 30px;
@@ -30,6 +31,14 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
             animation: float 6s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .surprise-open .card {
+            transform: scale(0.95);
+            filter: blur(3px);
         }
         
         @keyframes float {
@@ -110,6 +119,8 @@
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            position: relative;
+            z-index: 2;
         }
         
         button:hover {
@@ -117,21 +128,105 @@
             box-shadow: 0 15px 25px rgba(255, 107, 107, 0.4);
         }
         
-        .hidden {
+        /* Окно сюрприза */
+        .surprise-overlay {
             display: none;
-            margin-top: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            background: rgba(40, 40, 50, 0.6);
-            border-radius: 15px;
-            border-left: 3px solid #ff6b6b;
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.3s ease;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .surprise-card {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.9), rgba(255, 167, 38, 0.9));
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            border: 2px solid white;
+            animation: slideUp 0.5s ease-out;
+            position: relative;
+            overflow: hidden;
         }
         
+        .surprise-card::before {
+            content: '✨✨✨';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+        
+        .surprise-card::after {
+            content: '🎉🎉🎉';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px) scale(0.8);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .surprise-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .surprise-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 800;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .surprise-message {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .close-btn {
+            background: white;
+            color: #ff6b6b;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .close-btn:hover {
+            transform: scale(1.05);
+            background: #f0f0f0;
+        }
+        
+        /* Частицы и конфетти */
         .particles {
             position: fixed;
             top: 0;
@@ -171,8 +266,8 @@
         
         .confetti-piece {
             position: absolute;
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             background: var(--c);
             border-radius: 50%;
             animation: fall 3s linear forwards;
@@ -181,6 +276,29 @@
         @keyframes fall {
             0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
             100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        
+        /* Адаптация */
+        @media (max-height: 700px) {
+            .card { padding: 25px; }
+            h1 { font-size: 2em; }
+            .name { font-size: 2.3em; }
+            .cake { font-size: 2.5em; margin: 10px 0; }
+            .message { font-size: 1em; margin: 10px 0; }
+            .wishes { margin: 15px 0; }
+            button { padding: 12px 30px; font-size: 1em; }
+            
+            .surprise-card {
+                padding: 25px 20px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card { padding: 20px; }
+            .name { font-size: 2.1em; }
+            h1 { font-size: 1.8em; }
         }
     </style>
 </head>
@@ -204,14 +322,30 @@
             <div class="wish">🌈 Впечатлений</div>
         </div>
         
-        <button onclick="showMessage()">Открыть сюрприз 🎁</button>
-        
-        <div class="hidden" id="message">
-            <p>Ты делаешь мир лучше просто тем, что в нём есть! 💕</p>
-            <p>Оставайся такой же amazing! 😎✨</p>
-            <p>Пусть этот год будет самым крутым! 🚀</p>
-            <div style="margin-top: 15px; color: #ffa726; font-weight: 600;">
-                С днём рождения! 🥳🎉
+        <button onclick="showSurprise()">Открыть сюрприз 🎁</button>
+    </div>
+    
+    <!-- Оверлей с сюрпризом -->
+    <div class="surprise-overlay" id="surpriseOverlay">
+        <div class="surprise-card">
+            <div class="surprise-content">
+                <div class="surprise-title">🎁 СЮРПРИЗ ДЛЯ САШИ! 🎁</div>
+                
+                <div class="surprise-message">
+                    <p>Ты делаешь мир лучше просто тем, что в нём есть! 💕</p>
+                    <p>Оставайся такой же amazing! 😎✨</p>
+                    <p>Пусть этот год будет самым крутым! 🚀</p>
+                    <p style="margin-top: 20px; font-size: 1.3em; font-weight: bold;">
+                        С днём рождения! 🥳🎉
+                    </p>
+                    <div style="margin-top: 25px; padding: 15px; background: rgba(255, 255, 255, 0.2); border-radius: 15px;">
+                        <p style="font-style: italic; font-size: 0.9em;">
+                            P.S. Сохрани эту страницу — она всегда будет доступна по ссылке!
+                        </p>
+                    </div>
+                </div>
+                
+                <button class="close-btn" onclick="closeSurprise()">Закрыть ✨</button>
             </div>
         </div>
     </div>
@@ -232,21 +366,39 @@
             }
         }
         
-        // Показываем сообщение
-        function showMessage() {
-            const message = document.getElementById('message');
+        // Показываем сюрприз
+        function showSurprise() {
+            const overlay = document.getElementById('surpriseOverlay');
             const button = document.querySelector('button');
+            const body = document.body;
             
-            message.style.display = 'block';
+            // Показываем оверлей
+            overlay.style.display = 'flex';
+            body.classList.add('surprise-open');
+            
+            // Обновляем основную кнопку
             button.textContent = 'Сюрприз открыт! 🎉';
             button.style.background = 'linear-gradient(90deg, #00b894, #00cec9)';
             button.disabled = true;
             
-            // Конфетти
+            // Запускаем конфетти
             createConfetti();
             
             // Вибрация
-            if (navigator.vibrate) navigator.vibrate(100);
+            if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+            
+            // Блокируем прокрутку фона
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Закрываем сюрприз
+        function closeSurprise() {
+            const overlay = document.getElementById('surpriseOverlay');
+            const body = document.body;
+            
+            overlay.style.display = 'none';
+            body.classList.remove('surprise-open');
+            document.body.style.overflow = 'auto';
         }
         
         // Создаем конфетти
@@ -254,14 +406,17 @@
             const container = document.getElementById('confetti');
             container.style.display = 'block';
             
-            const colors = ['#ff6b6b', '#ffa726', '#00cec9', '#a29bfe'];
+            const colors = ['#ff6b6b', '#ffa726', '#00cec9', '#a29bfe', '#ffffff'];
             
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 80; i++) {
                 const piece = document.createElement('div');
                 piece.className = 'confetti-piece';
                 piece.style.setProperty('--c', colors[Math.floor(Math.random() * colors.length)]);
                 piece.style.left = Math.random() * 100 + 'vw';
                 piece.style.animationDelay = Math.random() * 2 + 's';
+                piece.style.width = Math.random() * 10 + 8 + 'px';
+                piece.style.height = piece.style.width;
+                piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
                 
                 container.appendChild(piece);
                 
@@ -273,6 +428,20 @@
                 container.innerHTML = '';
             }, 3000);
         }
+        
+        // Закрытие по клику на оверлей
+        document.getElementById('surpriseOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSurprise();
+            }
+        });
+        
+        // Закрытие по клавише Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSurprise();
+            }
+        });
         
         // Инициализация
         window.addEventListener('load', () => {
